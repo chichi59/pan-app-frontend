@@ -1,0 +1,60 @@
+.page{
+    display: flex;
+    flex-direction: column;
+}
+
+.top{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainsection{
+    padding: 3rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+
+    
+}
+
+.bgcircle{
+    height: 60rem;
+    width: 60rem;
+    background-color: #FEEECC;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    left: 30rem;
+    z-index: -1;
+}
+
+.title{
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 600;
+    font-size: 4rem;
+    margin-bottom: 10%;
+    width: 16ch;
+}
+
+.signup {
+    text-decoration: none;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    background-color: #D36135;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3rem;
+    color: white;
+  }
+
+  .signup:hover {
+     background-color: white;
+     color: #D36135;
+     border: 1px solid #D36135;
+  }

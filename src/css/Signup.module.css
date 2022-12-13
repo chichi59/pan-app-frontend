@@ -1,0 +1,137 @@
+.logingreeting {
+    font-weight: 400;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+   
+}
+
+.loginpage {
+    height: 100vh;
+    font-family: 'Abhaya Libre', cursive;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.loginsection {
+    width: 40vw;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    margin-top: 3rem;
+
+
+}
+
+.label {
+    font-size: 0.8rem;
+    display: block;
+    color: #6D6D6D;
+}
+
+.input, .inputpassword, .inputconfirmpassword {
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    outline: none;
+    padding: 0.5rem;
+    width: 13rem;
+    margin-bottom: 0.75rem;
+
+}
+
+.inputconfirmpassword {
+    margin-bottom: 3rem;
+}
+
+.signupbutton {
+    border: none;
+    background-color: #ABB77D;
+    color: white;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3rem;
+    align-self: center;
+    margin-bottom: 3rem;
+    
+
+}
+
+.signupbutton:hover {
+    background-color: white;
+    color: #ABB77D;
+    border: 1px solid #ABB77D;
+ }
+
+ .loginform{
+    display: flex;
+    flex-direction: column;
+    
+ }
+
+
+ .bgcirclelarge{
+    height: 35rem;
+    width: 35rem;
+    background-color: #FEEECC;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6rem;
+    left: 48rem;
+    z-index: 2;
+}
+
+.bgcirclesmall{
+    height: 25rem;
+    width: 25rem;
+    background-color: #E5EAD3;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0rem;
+    left: 40rem;
+    z-index: -1;
+}
+
+.alternate{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.alternate > p {
+    margin-right: 1ch;
+    color: #6D6D6D;
+}
+
+.loginlink {
+    text-decoration: none;
+    color: #D36135;
+}
+
+.loginlink:hover {
+    color: #662a12
+}
+
+.mismatch{
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+    align-self: flex-end;
+}
+
+.noshow {
+    display: none;
+}
+
+.nogap {
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    outline: none;
+    padding: 0.5rem;
+    width: 13rem;
+}

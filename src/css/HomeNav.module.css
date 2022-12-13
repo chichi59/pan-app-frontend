@@ -1,0 +1,76 @@
+.logoname{
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 4rem;
+    font-weight: 200;
+    margin: 0;
+   
+}
+
+.links, .signup {
+  text-decoration: none;
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.links:visited{
+    color: black;
+}
+
+.links:hover{
+    border-bottom: 2px solid orange;
+}
+
+.signup{
+    background-color: #D36135;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 3rem;
+    color: white;
+}
+
+.signup:hover {
+    background-color: white;
+    color: #D36135;
+    border: 1px solid #D36135;
+ }
+
+.navlinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navlinks > * {
+    margin-left: 2rem;
+}
+
+
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 0.5rem;
+}
+
+.logoimg{
+    height: 5rem;
+    margin-left: 0.3rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    text-decoration: none;
+    
+}
+
+.logo:visited {
+    color: black;
+}
