@@ -51,6 +51,8 @@
     padding-right: 1.5rem;
     border-radius: 3rem;
     color: white;
+    border: 1px solid transparent;
+    transition: 0.3s border ease-in-out, 0.3s background-color ease-in-out;
   }
 
   .signup:hover {

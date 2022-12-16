@@ -46,7 +46,7 @@
 }
 
 .signupbutton {
-    border: none;
+    border: 1px solid transparent;
     background-color: #ABB77D;
     color: white;
     font-family: 'Abhaya Libre', serif;
@@ -58,6 +58,8 @@
     border-radius: 3rem;
     align-self: center;
     margin-bottom: 3rem;
+    transition: 0.3s border ease-in-out, 0.3s background-color ease-in-out;
+    cursor: pointer;
     
 
 }
