@@ -1,0 +1,58 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 200;
+    width: 12vw;
+    height: 80vh;
+    margin-right: 2vw;
+    
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: black;
+    border: 1px solid transparent;
+    margin: 0.2rem 0rem;
+
+}
+
+.link:visited{
+    color: black;
+}
+
+.link:hover {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+.active {
+    margin: 0.2rem 0rem;
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background-color: black;
+    color: rgb(255, 216, 144);
+    font-weight: 600;
+    
+}
+
+.icon {
+    margin-right: 1ch;
+
+    width: 2ch;
+}
+
+
+
+.sectionhead {
+    font-weight: 600;
+    color: rgb(182, 182, 182);
+    margin: 0.5rem 1rem;
+}
+

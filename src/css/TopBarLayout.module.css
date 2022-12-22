@@ -1,0 +1,30 @@
+
+
+.maincont{
+    display: flex;
+    padding: 2vw;
+    padding-bottom: 0;
+}
+
+.out{
+    flex: 1;
+    height: 80vh;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(70, 70, 70);
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ABB77D;
+}
+

@@ -1,0 +1,11 @@
+.recipelist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 1vw;
+    align-items: flex-start;
+    height: 85%;
+    overflow-y: scroll;
+
+}
+
