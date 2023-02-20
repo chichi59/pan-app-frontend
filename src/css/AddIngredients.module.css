@@ -1,0 +1,23 @@
+.ingredientsection{
+    height: 100%;
+}
+
+.ingredientsection > ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+.ingredientitem {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+
+}
+
+.buttonset {
+    margin-left: auto;
+}

@@ -13,19 +13,19 @@
 }
 
 .loginsection {
-    width: 50vw;
+    width: 45vw;
     margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
-    margin-top: 4rem;
+    padding-top: 3.5rem;
+    box-sizing: border-box;
 
 
 }
 
 .label {
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: block;
     color: #6D6D6D;
 }
@@ -35,8 +35,10 @@
     border-bottom: 1px solid #d3d3d3;
     outline: none;
     padding: 0.5rem;
-    width: 13rem;
     margin-bottom: 0.75rem;
+    box-sizing: border-box;
+    align-self: center;
+    width: 100%;
 
 }
 
@@ -61,23 +63,32 @@
     border-radius: 3rem;
     align-self: center;
     margin-bottom: 3rem;
-    transition: 0.3s border ease-in-out, 0.3s background-color ease-in-out;
-
-    
+    transition: 0.3s border ease-in-out, 0.3s background-color ease-in-out;  
 
 }
 
-.loginbutton:hover {
+.loginbutton:disabled{
+    background-color: #b2b4a8;
+    cursor: default;
+}
+
+.loginbutton:hover:enabled {
     background-color: white;
     color: #D88666;
     border: 1px solid #D88666;
     cursor: pointer;
  }
 
+ .inputsection {
+    width: 60%;
+}
+
+
  .loginform{
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+    width: 80%;
  }
 
 
@@ -110,4 +121,25 @@
 
 .signuplink:hover {
     color: #662a12
+}
+
+.erroricon{
+    margin-right: 1ch;
+}
+
+.noshow {
+    display: none;
+}
+
+.error {
+    width: 60%;
+    box-sizing: border-box;
+    background-color: rgb(255, 121, 121);
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    border-radius: 2rem;
+
 }

@@ -1,4 +1,4 @@
-.recipecont {
+.recipecont, .delete {
     width: 19vw;
     padding: 2vw;
     padding-top: 1vw;
@@ -7,26 +7,33 @@
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     transition: 0.3s all ease-in-out;
+    height: 50vh;
+}
 
+
+.delete {
+    box-shadow: 0px 0px 4px rgb(255, 176, 176);
+    justify-content: center;
+}
+
+.delete:hover{
+    box-shadow: 0px 0px 6px rgb(255, 176, 176);
+    transform: scale(1.02);
+
+}
+
+.delete > p{
+    text-align: center;
 }
 
 .recipecont:hover{
     box-shadow: 0px 0px 6px lightgrey;
     transform: scale(1.02);
-}
-
-.cardimg {
-    display: block;
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 5px lightgray;
-    margin-top: 4%;
+    cursor: pointer
 }
 
 .options {
@@ -34,8 +41,20 @@
     justify-content: flex-end;
     width: 100%;
     gap: 2ch;
-    color: lightgray
+    color: lightgray;
 }
+
+
+.cardimg {
+    display: block;
+    width: 100%;
+    height: 9.5rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px lightgray;
+    margin-top: 4%;
+}
+
 
 
 .bookmark {
@@ -54,29 +73,79 @@
     display: none;
 }
 
-.trash:hover, .edit:hover {
+.none > *{
+    display: none;
+}
+
+.trash:hover, .edit:hover{
     transform: scale(1.02);
     color: gray;
     cursor: pointer;
 }
 
+.selectyes:hover{
+    cursor: pointer;
+    color: rgb(121, 165, 121);
+}
+
+.selectno:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
 .info{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    
 }
 
 
 .infosection {
     display: flex;
     flex-wrap: wrap;
-    gap: 3%;
+    gap: 1ch;
 
-    
+}
+
+.buttonset{
+    display: flex;
+    gap: 2rem;
 }
 
 .infosection > * {
     padding: 0;
     margin: 0;
     color: rgb(133, 133, 133);
-    margin-bottom: 1ch;
     width: 14ch;
+    height: fit-content;
 }
+
+.trashlarge{
+    color: rgb(255, 121, 121);
+}
+
+.iconleft {
+    position: absolute;
+    top: 30%;
+    right: 83%;
+
+}
+
+.iconright{
+    position: absolute;
+    top: 30%;
+    left: 83%;
+}
+
+.iconright:hover, .iconleft:hover {
+    color: #ABB77D;
+}
+

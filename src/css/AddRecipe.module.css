@@ -1,0 +1,168 @@
+.addrecipesection {
+    height: 100%;
+    font-family: 'Abhaya Libre', serif;
+}
+
+.noshow {
+    display: none;
+}
+
+.noshow * {
+    display: none;
+}
+
+.pagehead {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    padding-bottom: 3vh;
+
+}
+
+.recipenamesection {
+    display: flex;
+    gap: 2ch;
+    align-items: center;
+}
+
+.greenrecipename {
+    display: flex;
+    gap: 2ch;
+    align-items: center;
+    color: #899264;
+}
+
+
+
+.editicon {
+    color: lightgray;
+}
+
+.editicon:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+
+.pagehead * {
+    margin: 0;
+}
+
+.postrecipe {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1ch;
+    border-radius: 2rem;
+    border: 1px solid orange;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 0px 3px orange;
+    color: black;
+
+}
+
+
+.postrecipe:visited {
+    color: black;
+}
+
+
+.postrecipe:hover {
+    color: rgb(255, 216, 144);
+    background-color: black;
+}
+
+.recipedetails {
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0px 0px 4px gray;
+    border-radius: 2rem;
+    height: 80%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+}
+
+.uploadbox {
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0px 0px 4px #899264;
+    border-radius: 2rem;
+    height: 80%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadmessage {
+    color: #899264;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.content {
+    height: 78%;
+
+}
+
+.navbuttons {
+    display: flex;
+    align-items: center;
+}
+
+.next {
+    margin-left: auto;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4vw;
+    margin-bottom: 0.5rem;
+}
+
+.navbar>li {
+    list-style: none;
+}
+
+
+
+.options {
+    margin: 1vw 0;
+    border: 1px solid transparent;
+}
+
+.options:hover {
+    border-bottom: 1px solid orange;
+    cursor: pointer;
+}
+
+.activeoption {
+    margin: 1vw 0;
+    border-bottom: 1px solid orange;
+}
+
+.recipesubmit {
+    margin-left: auto;
+}
+
+
+.error {
+    width: 20%;
+    box-sizing: border-box;
+    background-color: rgb(255, 121, 121);
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    border-radius: 2rem;
+    margin-left: 2rem;
+
+}

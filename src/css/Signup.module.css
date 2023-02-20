@@ -14,21 +14,53 @@
 }
 
 .loginsection {
-    width: 40vw;
+    width: 45vw;
     margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
-    margin-top: 3rem;
-
+    padding-top: 3.5rem;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
 
 }
 
+.loginform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+ }
+
+.inputsection {
+    width: 60%;
+}
+
+.error {
+    width: 60%;
+    box-sizing: border-box;
+    background-color: rgb(255, 121, 121);
+    padding: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    border-radius: 2rem;
+
+}
+ 
+
 .label {
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: block;
     color: #6D6D6D;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.validity{
+    color: #ABB77D;
 }
 
 .input, .inputpassword, .inputconfirmpassword {
@@ -36,14 +68,17 @@
     border-bottom: 1px solid #d3d3d3;
     outline: none;
     padding: 0.5rem;
-    width: 13rem;
     margin-bottom: 0.75rem;
+    box-sizing: border-box;
+    align-self: center;
+    width: 100%;
 
 }
 
-.inputconfirmpassword {
-    margin-bottom: 3rem;
-}
+.input:focus, .inputpassword:focus, .inputconfirmpassword:focus {
+    border-bottom: 1px solid #646464;
+} 
+
 
 .signupbutton {
     border: 1px solid transparent;
@@ -60,21 +95,20 @@
     margin-bottom: 3rem;
     transition: 0.3s border ease-in-out, 0.3s background-color ease-in-out;
     cursor: pointer;
-    
 
 }
 
-.signupbutton:hover {
+.signupbutton:disabled{
+    background-color: #b2b4a8;
+    cursor: default;
+}
+
+.signupbutton:hover:enabled {
     background-color: white;
     color: #ABB77D;
     border: 1px solid #ABB77D;
  }
 
- .loginform{
-    display: flex;
-    flex-direction: column;
-    
- }
 
 
  .bgcirclelarge{
@@ -119,21 +153,22 @@
     color: #662a12
 }
 
-.mismatch{
-    color: red;
+.guide{
+    color: darkorange;
     font-size: 0.8rem;
-    margin-bottom: 3rem;
-    align-self: flex-end;
+    width: 80%;
+    text-align: center;
+    
+}
+.infoicon {
+    color: rgb(255, 212, 133);
+    margin-right: 1ch;
+}
+
+.erroricon{
+    margin-right: 1ch;
 }
 
 .noshow {
     display: none;
-}
-
-.nogap {
-    border: none;
-    border-bottom: 1px solid #d3d3d3;
-    outline: none;
-    padding: 0.5rem;
-    width: 13rem;
 }

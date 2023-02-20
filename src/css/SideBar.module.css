@@ -56,3 +56,6 @@
     margin: 0.5rem 1rem;
 }
 
+.sidelist > li {
+    list-style: none;
+}

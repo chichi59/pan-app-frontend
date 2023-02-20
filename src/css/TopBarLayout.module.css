@@ -9,6 +9,7 @@
 .out{
     flex: 1;
     height: 80vh;
+    padding-left: 2vw;
 }
 
 ::-webkit-scrollbar {
@@ -20,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(70, 70, 70);
+    background: rgb(104, 104, 104);
     border-radius: 2rem;
 }
 

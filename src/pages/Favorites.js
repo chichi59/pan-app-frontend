@@ -1,17 +1,16 @@
-import { Link } from 'react-router-dom'
 import styles from '../css/Dash.module.css'
 import React from 'react'
 import RecipeList from '../components/RecipeList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faKitchenSet } from '@fortawesome/free-solid-svg-icons'
-import { faSquareCheck, faHourglassHalf } from '@fortawesome/free-regular-svg-icons'
+import { faKitchenSet } from '@fortawesome/free-solid-svg-icons'
+import { faHourglassHalf } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate, useLocation } from 'react-router-dom'
 import useAxiosPrivate from '../hooks/useAxiosPrivate'
 
 
 
 
-const Dash = () => {
+const Favorites = () => {
 
 
     const navigate = useNavigate();
@@ -24,8 +23,12 @@ const Dash = () => {
     const fetchRecipes = async () => {
         let recipeMod = []
         try{
-            const response = await axiosPrivate.get('/recipes/myrecipes')
-            recipeMod = response.data 
+            const response = await axiosPrivate.get('/recipes/user/favorites')
+            recipeMod = response.data;
+            recipeMod.map((recipe) => {recipe.favorite = true; return recipe} )
+            setRecipes(recipeMod)
+            setIsLoading(false);
+
         }catch(err){
             console.log(err.response?.data);
             console.log(err.response?.status);
@@ -36,41 +39,19 @@ const Dash = () => {
                 navigate('/login', {state: {from: location}, replace: true})
             }
 
+            if (err?.response?.status === 400){
+                console.log(err.response.data.message)
+            }
+
             return
         }
-
-        try{
-            const response = await axiosPrivate.get('/users/me');
-            for(let i = 0; i < response.data.favorites.length; i++){
-                const found = recipeMod.find(recipe => recipe._id === response.data.favorites[i])
-                if(found) found.favorite = true;
-            }
-
-            recipeMod.map((recipe) => {if(!recipe.hasOwnProperty('favorite')) {recipe.favorite = false} })
-
-            setRecipes(recipeMod)
-            setIsLoading(false);
-
-
-        }catch(err){
-            console.log(err.response?.data);
-            console.log(err.response?.status);
-            console.log(err.response?.headers);
-            console.log(err.message)
-            
-            if (err?.response?.status === 400){
-                console.log('No user found')
-            }
-
-        }
-
     }
 
     const fetchCoverImages = async () => {
         let images = []
 
         try{
-            const response = await axiosPrivate.get('/recipes/myrecipes/coverimages');
+            const response = await axiosPrivate.get('/recipes/user/favorites/coverimages');
 
             images = response.data.coverIms 
             setCoverImages(images);
@@ -88,7 +69,6 @@ const Dash = () => {
         }
 
     }
-
 
     const updateFavorite = async (recipeid) => {
         let success = false;
@@ -118,29 +98,6 @@ const Dash = () => {
         }
     }
 
-    const deleteRecipe = async (recipeid) => {
-        let success = false;
-        try{
-            const response = axiosPrivate.delete('/recipes/myrecipes', {
-                data:   {
-                    recipeid: recipeid
-                    }
-            })
-
-            success = true;
-        }catch(err){
-            console.log(err.response?.data);
-            console.log(err.response?.status);
-            console.log(err.response?.headers);
-            console.log(err.message)
-        }
-
-        if(success){
-            const updatedRecipes = recipes.filter((item) => item._id !== recipeid )
-            setRecipes(updatedRecipes);
-        }
-    }
-
     const [isLoading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {
@@ -149,29 +106,27 @@ const Dash = () => {
     }, [])
 
 
-
     return (
         <main className={styles.mainsection}>
                 <div className={styles.pagehead}>
-                    <h2 className={styles.title}> My Recipes </h2>
-                    <Link className={recipes.length === 0 ? styles.glownewrecipe : styles.newrecipe} to="/dash/addrecipe"> <FontAwesomeIcon icon={faPlus}/> New Recipe </Link>
+                    <h2 className={styles.title}> Favorites </h2>
                 </div>
 
                 {!isLoading && recipes.length === 0 && <div className={styles.message}>
                     <FontAwesomeIcon icon={faKitchenSet} size="3x"/> 
-                    <p> You don't have any recipes yet, we're hungry!</p>
+                    <p> You don't have any favorites yet, let's go exploring!</p>
                 </div>}
 
                 {(isLoading ||(recipes.length !== 0 && coverImages.length === 0)) && <div className={styles.message}>
                     <FontAwesomeIcon icon={faHourglassHalf} size="3x"/> 
-                    <p> Loading recipes..</p>
+                    <p> Loading favorites..</p>
                 </div>}
-                
-                {recipes.length !== 0 && coverImages.length !== 0 && <RecipeList list={recipes} images={coverImages} updateFave={updateFavorite} deleteRecipe={deleteRecipe}/>}
+
+                {recipes.length !== 0 && coverImages.length !== 0 && <RecipeList list={recipes} images={coverImages} updateFave={updateFavorite}/>}
                 <div className={styles.bgcricle}></div>
                 <div className={styles.smallcircle}></div> 
         </main>
     )
 }
 
-export default Dash
+export default Favorites;

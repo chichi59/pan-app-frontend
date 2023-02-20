@@ -1,0 +1,18 @@
+.stepsection {
+    height: 100%
+}
+
+.stepsection > ol {
+    max-height: 75%;
+    list-style-position: inside;
+    overflow-y: scroll;
+    margin-bottom: 0.5rem;
+}
+
+.stepitem {
+    padding: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+}
+

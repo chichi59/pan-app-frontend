@@ -11,14 +11,15 @@ import { faCookieBite } from '@fortawesome/free-solid-svg-icons'
 
 
 function SideBar(){
+
     return (
         <nav className={styles.sidebar}>
             <ul className={styles.sidelist}>
                 <li className={styles.sectionhead}> LIBRARY </li>
-                <li> <NavLink to="/user" className={({isActive}) => isActive ? styles.active : styles.link}>
+                <li> <NavLink to="/dash" className={({isActive}) => isActive  ? styles.active : styles.link}>
                     <FontAwesomeIcon icon={faUtensils} className={styles.icon} />
                     My Recipes</NavLink> </li>
-                <li> <NavLink to="/favourites"className={({isActive}) => isActive ? styles.active : styles.link}>
+                <li> <NavLink to="/favorites" className={({isActive}) => isActive ? styles.active : styles.link}>
                     <FontAwesomeIcon icon={faBookmark} className={styles.icon}/>
                     Favourites</NavLink> </li>
                 <li className={styles.sectionhead}> DISCOVER </li>

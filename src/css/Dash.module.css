@@ -1,5 +1,4 @@
 .mainsection {
-    padding-left: 2vw;
     height: 100%;
     font-family: 'Abhaya Libre', serif;
 }
@@ -20,7 +19,7 @@
 }
 
 
-.newrecipe, .select{
+.newrecipe, .glownewrecipe {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -30,16 +29,53 @@
     border: 1px solid orange;
     padding: 0.5rem 1rem;
     box-shadow: 0px 0px 3px orange;
+    color: black;
 
 }
 
+@keyframes glowing {
+    0%{
+        box-shadow: 0 0 5px orange;
+    }
 
-.newrecipe:visited {
+    50%{
+        box-shadow: 0 0 20px rgb(255, 207, 119);
+    }
+
+    100%{
+        box-shadow: 0 0 5px orange;
+    }
+}
+
+.glownewrecipe{
+    animation: glowing 2000ms infinite;
+}
+
+
+.newrecipe:visited, .glownewrecipe:visited {
     color: black;
 }
 
 
-.newrecipe:hover {
+.newrecipe:hover, .glownewrecipe:hover {
     color: rgb(255, 216, 144);
     background-color: black;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px gray;
+    padding: 3rem;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+
+
+}
+
+.noshow {
+    display: none
 }

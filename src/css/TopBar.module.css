@@ -3,7 +3,7 @@
     align-items: center;
     padding: 0rem 3vw;
     justify-content: space-between;
-    height: 12vh;
+    height: 5rem;
     top: 0%;
     z-index: 1;
 }
@@ -139,6 +139,6 @@
     border: 0.3px solid #ebebeb;
 }
 
-li {
+.dropdown > li, .navlinks > li {
     list-style: none;
 }
