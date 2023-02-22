@@ -4,18 +4,15 @@ import React from 'react'
 import pi1 from '../img/placeholder1.png'
 import pi2 from '../img/placeholder2.png'
 import pi3 from '../img/placeholder3.png'
+import pp from '../img/profile.png'
 
 
-
-
-//this needs to use items.map instead of manual recipe entry
-//each mapped Recipe card item should have a key passed in
-
-function RecipeList({list, images, updateFave, deleteRecipe}){
+function RecipeList({list, images, updateFave, profilePics,  deleteRecipe}){
 
     const [loading, setLoading] = React.useState(true);
     const [imageMap, setImageMap] = React.useState(new Map());
     const [placeholderImg, setPlaceholderImg] = React.useState([]);
+    const [profilePicMap, setProfilePicMap] = React.useState(new Map());
 
 
     React.useEffect(() => {
@@ -32,6 +29,19 @@ function RecipeList({list, images, updateFave, deleteRecipe}){
         }
 
         setPlaceholderImg(placeholders);
+
+        if(profilePics){
+            const ppMap = new Map();
+
+            for(const pic of profilePics){
+                ppMap.set(pic.id, pic.imageURL)
+            }
+
+            setProfilePicMap(ppMap);
+
+        }
+
+
         setLoading(false);
 
 
@@ -45,7 +55,7 @@ function RecipeList({list, images, updateFave, deleteRecipe}){
                 return (
 
                     <RecipeCard recipe={item} coverImages={imageMap.get(item._id)} key={item._id} recipeid={item._id} updateFave={updateFave}
-                    deleteRecipe={deleteRecipe} placeholderImg={placeholderImg[index]}/>
+                    deleteRecipe={deleteRecipe} placeholderImg={placeholderImg[index]} profilePic={item.hasOwnProperty('owner') ? profilePicMap.get(item.owner) : pp}/>
                 )
             })}
         </section>

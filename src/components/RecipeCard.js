@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-function RecipeCard({ recipe, key, coverImages, recipeid, updateFave, deleteRecipe, placeholderImg }) {
+function RecipeCard({ recipe, key, coverImages, profilePic, recipeid, updateFave, deleteRecipe, placeholderImg }) {
 
     const [fave, setFave] = React.useState(recipe.favorite)
     const [showDelete, setShowDelete] = React.useState(false);
@@ -93,6 +93,7 @@ function RecipeCard({ recipe, key, coverImages, recipeid, updateFave, deleteReci
 
                 <div className={styles.info}>
                     <h2 className={styles.recipetitle}> {recipe.title} </h2>
+                    {recipe.hasOwnProperty('ownerusername') && <div> <img src={profilePic}></img> <p>{recipe.ownerusername}</p></div>}
                     <div className={styles.infosection}>
                         {recipe.hasOwnProperty('public') && <p> <FontAwesomeIcon icon={recipe.public ? faEarthAmericas : faLock} /> {recipe.public ? "Public" : "Private"} </p>}
                         {recipe.calories && <p> <FontAwesomeIcon icon={faFire} /> {recipe.calories} Cal</p>}

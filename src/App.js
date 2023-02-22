@@ -13,6 +13,8 @@ import Recipe from './pages/Recipe'
 import Favorites from './pages/Favorites'
 import Settings from './pages/Settings'
 import Profile from './pages/Profile'
+import Home from './pages/Home'
+import Explore from './pages/Explore'
 
 function App() {
   return (
@@ -39,6 +41,14 @@ function App() {
 
         <Route path="favorites" element={<TopBarLayout/>}>
           <Route index element={<Favorites />}/>
+        </Route>
+
+        <Route path="home" element={<TopBarLayout/>}>
+          <Route index element={<Home/>}/>
+        </Route>
+
+        <Route path="explore" element={<TopBarLayout/>}>
+          <Route index element={<Explore/>}/>
         </Route>
 
       </Route>  

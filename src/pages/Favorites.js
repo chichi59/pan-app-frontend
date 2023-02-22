@@ -23,7 +23,7 @@ const Favorites = () => {
     const fetchRecipes = async () => {
         let recipeMod = []
         try{
-            const response = await axiosPrivate.get('/recipes/user/favorites')
+            const response = await axiosPrivate.get('/recipes/myrecipes/favorites')
             recipeMod = response.data;
             recipeMod.map((recipe) => {recipe.favorite = true; return recipe} )
             setRecipes(recipeMod)
@@ -51,9 +51,10 @@ const Favorites = () => {
         let images = []
 
         try{
-            const response = await axiosPrivate.get('/recipes/user/favorites/coverimages');
+            const response = await axiosPrivate.get('/recipes/myrecipes/favorites/coverimages');
 
             images = response.data.coverIms 
+            
             setCoverImages(images);
             
         }catch(err){
