@@ -56,7 +56,7 @@ function AddIngredients({ingList, handleEdit, handleDelete, handleSubmit}){
 
                                 return (
                                     <li className={styles.ingredientitem} key={item.id}>
-                                        {`${item.quantity} ${item.unit} of ${item.ingredient}`}
+                                        {item.unit ? `${item.quantity} ${item.unit} of ${item.ingredient}` : `${item.quantity} ${item.ingredient}` }
                                         <div className={styles.buttonset}>
                                             <button onClick={() => setCurrEditing(item.id)}> Edit </button>
                                             <button onClick={() => handleDelete(item.id)}> Delete </button>

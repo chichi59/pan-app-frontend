@@ -23,7 +23,7 @@ function SideBar(){
                     <FontAwesomeIcon icon={faBookmark} className={styles.icon}/>
                     Favourites</NavLink> </li>
                 <li className={styles.sectionhead}> DISCOVER </li>
-                <li><NavLink to="/homefeed" className={({isActive}) => isActive ? styles.active : styles.link}>
+                <li><NavLink to="/home" className={({isActive}) => isActive ? styles.active : styles.link}>
                     <FontAwesomeIcon icon={faHouse} className={styles.icon}/>
                     Home</NavLink></li>
                 <li><NavLink to="/explore" className={({isActive}) => isActive ? styles.active : styles.link}>

@@ -5,14 +5,18 @@ import pi1 from '../img/placeholder1.png'
 import pi2 from '../img/placeholder2.png'
 import pi3 from '../img/placeholder3.png'
 import pp from '../img/profile.png'
+import { type } from "@testing-library/user-event/dist/type";
 
 
 function RecipeList({list, images, updateFave, profilePics,  deleteRecipe}){
+
 
     const [loading, setLoading] = React.useState(true);
     const [imageMap, setImageMap] = React.useState(new Map());
     const [placeholderImg, setPlaceholderImg] = React.useState([]);
     const [profilePicMap, setProfilePicMap] = React.useState(new Map());
+
+    let singleUser = typeof profilePics === 'string'
 
 
     React.useEffect(() => {
@@ -30,7 +34,7 @@ function RecipeList({list, images, updateFave, profilePics,  deleteRecipe}){
 
         setPlaceholderImg(placeholders);
 
-        if(profilePics){
+        if(profilePics && !singleUser){
             const ppMap = new Map();
 
             for(const pic of profilePics){
@@ -38,6 +42,8 @@ function RecipeList({list, images, updateFave, profilePics,  deleteRecipe}){
             }
 
             setProfilePicMap(ppMap);
+
+
 
         }
 
@@ -52,10 +58,18 @@ function RecipeList({list, images, updateFave, profilePics,  deleteRecipe}){
     return (
          <section className={styles.recipelist}>
             {!loading && list?.map((item, index) => {
+                let pic = ''
+                if(!singleUser) {
+                    pic = !item.hasOwnProperty('owner') ? '' : profilePicMap.get(item.owner) ? profilePicMap.get(item.owner) : pp;
+                }else{
+                    pic=profilePics
+                }
+
+                
                 return (
 
-                    <RecipeCard recipe={item} coverImages={imageMap.get(item._id)} key={item._id} recipeid={item._id} updateFave={updateFave}
-                    deleteRecipe={deleteRecipe} placeholderImg={placeholderImg[index]} profilePic={item.hasOwnProperty('owner') ? profilePicMap.get(item.owner) : pp}/>
+                    <RecipeCard recipe={item} coverImages={imageMap.get(item._id)} key={item.favorite} recipeid={item._id} updateFave={updateFave}
+                    deleteRecipe={deleteRecipe} placeholderImg={placeholderImg[index]} profilePic={pic}/>
                 )
             })}
         </section>

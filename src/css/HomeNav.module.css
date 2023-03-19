@@ -3,6 +3,7 @@
     font-size: 4rem;
     font-weight: 200;
     margin: 0;
+    color: black;
    
 }
 
@@ -11,6 +12,7 @@
   font-family: 'Abhaya Libre', serif;
   font-weight: 500;
   font-size: 1.2rem;
+  color: black;
 }
 
 .links {
@@ -81,4 +83,80 @@
 
 .logo:visited {
     color: black;
+}
+
+.hasdrop{
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    gap: 1rem;
+    
+}
+
+
+
+.profile, .profilehov{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    transition: 0.3s border ease-in-out;
+}
+
+.profilehov{
+    border: 2px solid #ABB77D;
+}
+
+
+
+.profile:hover{
+    border: 2px solid #ABB77D;
+}
+
+.profilelink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    gap: 0.3rem;
+
+}
+
+
+.dropdown{
+    padding: 0;
+    width: 10vw;
+    position: absolute;
+    box-shadow: 0px 0px 5px lightgrey;
+    left: 87vw;
+    top: 10vh;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    z-index: 99;
+    list-style-type: none;
+}
+
+
+
+.subnav {
+    text-decoration: none;
+    color: black;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 200;
+    padding: 0.75rem;
+    text-align: start;
+    display: block;
+    border-radius: 2rem;
+
+
+}
+.subnav:visited{
+    color: black;
+}
+
+.subnav:hover {
+    color: white;
+    background-color: #ABB77D;
 }

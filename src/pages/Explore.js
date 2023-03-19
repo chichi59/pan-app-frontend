@@ -6,12 +6,17 @@ import { faKitchenSet } from '@fortawesome/free-solid-svg-icons'
 import { faHourglassHalf } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate, useLocation } from 'react-router-dom'
 import useAxiosPrivate from '../hooks/useAxiosPrivate'
+import axios from '../api/axios'
+import useAuth from '../hooks/useAuth'
+import HomeNav from '../components/HomeNav.js'
+
 
 
 
 
 const Explore = () => {
 
+    const { auth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -19,17 +24,15 @@ const Explore = () => {
 
     const [recipes, setRecipes] = React.useState([]);
     const [coverImages, setCoverImages] = React.useState([]);
+    const [profilePics, setProfilePics] = React.useState([]);
     
     const fetchRecipes = async () => {
         let recipeMod = []
         try{
-            const response = await axiosPrivate.get('/recipes/explore')
+            const response = Object.keys(auth).length ? await axiosPrivate.get('/recipes/') : await axios.get('/recipes/explore')
             recipeMod = response.data;
-            recipeMod.map((recipe) => {recipe.favorite = true; return recipe} )
             setRecipes(recipeMod)
-            console.log(response);
             setIsLoading(false);
-
         }catch(err){
             console.log(err.response?.data);
             console.log(err.response?.status);
@@ -57,6 +60,9 @@ const Explore = () => {
             images = response.data.coverIms 
             
             setCoverImages(images);
+            setProfilePics(response.data.profilePics);
+            
+
             
         }catch(err){
             console.log(err.response?.data);
@@ -73,6 +79,11 @@ const Explore = () => {
     }
 
     const updateFavorite = async (recipeid) => {
+        if(Object.keys(auth).length === 0) {
+            navigate('/login')
+            return
+        }
+        
         let success = false;
         try{
             const response = axiosPrivate.patch('/users',{
@@ -100,6 +111,7 @@ const Explore = () => {
         }
     }
 
+
     const [isLoading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {
@@ -110,6 +122,7 @@ const Explore = () => {
 
     return (
         <main className={styles.mainsection}>
+                {Object.keys(auth).length === 0 && <HomeNav />}
                 <div className={styles.pagehead}>
                     <h2 className={styles.title}> Explore Recipes </h2>
                 </div>
@@ -124,9 +137,8 @@ const Explore = () => {
                     <p> Loading recipes..</p>
                 </div>}
 
-                {recipes.length !== 0 && coverImages.length !== 0 && <RecipeList list={recipes} images={coverImages} updateFave={updateFavorite}/>}
-                <div className={styles.bgcricle}></div>
-                <div className={styles.smallcircle}></div> 
+                {recipes.length !== 0 && coverImages.length !== 0 && <RecipeList list={recipes} images={coverImages} profilePics={profilePics} updateFave={updateFavorite}/>}
+                
         </main>
     )
 }

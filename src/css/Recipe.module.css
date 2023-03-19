@@ -214,5 +214,24 @@
     gap: 5ch;
 }
 
+.ownersection{
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.ownersection > img {
+    height: 1.5rem;
+    border-radius: 1rem;
+}
+
+.ownersection > p{
+    margin: 0;
+    color: brown;
+}
+
 
 
